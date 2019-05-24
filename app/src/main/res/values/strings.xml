@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FullStack</string>
+    <string name="title_home">Мой профиль</string>
+    <string name="title_events">События</string>
+    <string name="title_courses">Курсы</string>
+    <string name="title_articles">Статьи</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
