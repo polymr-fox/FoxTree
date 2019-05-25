@@ -18,6 +18,9 @@
     <dimen name="big_icon_size">100dp</dimen>
     <dimen name="huge_icon_size">250dp</dimen>
 
+    <dimen name="image_width">120dp</dimen>
+    <dimen name="image_final_width">32dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
     <dimen name="corner_radius">10dp</dimen>
 
 
