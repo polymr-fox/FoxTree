@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements CourseFragment.On
         return false;
     };
 
-
     @Override
     public void onCourseClick(final Course course) {
         final Intent intent = new Intent(MainActivity.this, CourseActivity.class);

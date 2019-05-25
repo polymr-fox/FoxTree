@@ -14,5 +14,11 @@
     <string name="sample_role">Студент</string>
     <string name="links">Ссылки</string>
     <string name="email">Почта</string>
+    <string name="vk_sample">\@k_arra</string>
+    <string name="tg_sample">\@k_arra</string>
+    <string name="email_sample">l0gark@ya.ru</string>
+    <string name="title_knowing">Знаю</string>
+    <string name="title_like">Интересно</string>
+
 
 </resources>
