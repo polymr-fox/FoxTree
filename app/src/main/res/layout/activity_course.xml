@@ -108,8 +108,6 @@
                     android:textSize="@dimen/default_text_app_title_size"
                     />
             </android.support.v7.widget.Toolbar>
-
-
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>

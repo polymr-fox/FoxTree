@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controller.activity.CourseActivity">
-        </activity>
+        <activity android:name=".controller.activity.HomeActivity"></activity>
+        <activity android:name=".controller.activity.CourseActivity"></activity>
         <activity
             android:name=".controller.activity.MainActivity"
             android:label="@string/app_name">
