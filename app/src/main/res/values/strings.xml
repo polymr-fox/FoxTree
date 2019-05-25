@@ -10,5 +10,9 @@
     <string name="members">%1$d / %2$d</string>
     <string name="name_sample">Искусство и наука: Проект VITAE - множество отпечатков ладони на лунном цветке</string>
     <string name="big_text_sample">hjbhh</string>
+    <string name="sample_person_name">Илон Маск</string>
+    <string name="sample_role">Студент</string>
+    <string name="links">Ссылки</string>
+    <string name="email">Почта</string>
 
 </resources>

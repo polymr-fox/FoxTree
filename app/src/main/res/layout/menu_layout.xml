@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_half_vertical_margin">
+
+        <ImageView
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:layout_marginStart="@dimen/default_vertical_margin"
+            android:layout_marginEnd="@dimen/default_half_vertical_margin"
+            android:src="@mipmap/ic_course" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/default_vertical_margin"
+            android:layout_marginEnd="@dimen/default_half_vertical_margin"
+
+            android:text="@string/title_courses"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="@dimen/default_text_title_size" />
+    </LinearLayout>
+
+</android.support.design.card.MaterialCardView>
