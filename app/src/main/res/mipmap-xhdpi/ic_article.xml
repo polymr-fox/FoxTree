@@ -1,0 +1,51 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="29dp"
+    android:viewportWidth="24"
+    android:viewportHeight="29">
+  <group>
+    <clip-path android:pathData="M0,0h24v29h-24z M 0,0"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M20.5879,28.7456H3.412C1.6771,28.7456 0.2891,27.5246 0.2891,25.9983V3.0018C0.2891,1.4755 1.6771,0.2544 3.412,0.2544H20.5879C22.3229,0.2544 23.7108,1.4755 23.7108,3.0018V25.9983C23.7108,27.5246 22.3229,28.7456 20.5879,28.7456Z"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeLineCap="round"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M23.7108,9.4123V3.2053C23.7108,1.5772 22.3807,0.2544 20.7614,0.2544H14.8048L23.7108,9.4123Z"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeLineCap="round"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M3.759,6.3597H14.1687"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeLineCap="round"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M3.759,11.4474H19.3735"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeLineCap="round"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M3.759,16.5351H14.747"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeLineCap="round"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M3.759,21.6228H18.2169"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeLineCap="round"/>
+  </group>
+</vector>

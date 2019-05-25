@@ -10,23 +10,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.develop.loginov.fullstack.R;
+import com.develop.loginov.fullstack.controller.fragment.CourseFragment;
 import com.develop.loginov.fullstack.model.Course;
 
 import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
     private final List<Course> courses;
+    private final CourseFragment.OnCourseClickListener onCourseClickListener;
 
-    public CourseAdapter(final List<Course> items) {
+    public CourseAdapter(final List<Course> items,
+                         CourseFragment.OnCourseClickListener onCourseClickListener) {
         courses = items;
+        this.onCourseClickListener = onCourseClickListener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_course, parent, false);
-//        RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//        view.setLayoutParams(lp);
         return new ViewHolder(view);
     }
 
@@ -45,7 +47,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         final TextView nameCourseView;
         final TextView authorView;
         final TextView amountMembersView;
-        final ImageView closeView;
+        final ImageView lockView;
         final ImageView imageView;
 
         ViewHolder(final View itemView) {
@@ -54,7 +56,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
             nameCourseView = (TextView) itemView.findViewById(R.id.item_course__name);
             authorView = (TextView) itemView.findViewById(R.id.item_course__author);
             amountMembersView = (TextView) itemView.findViewById(R.id.item_course__members);
-            closeView = (ImageView) itemView.findViewById(R.id.item_course__close);
+            lockView = (ImageView) itemView.findViewById(R.id.item_course__lock);
             imageView = (ImageView) itemView.findViewById(R.id.item_course_image_course);
         }
 
@@ -64,7 +66,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
             authorView.setText(course.getAuthorName());
             amountMembersView.setText(context.getString(R.string.members, course.getCurrentMembersCount(), course.getMaxMemberCount()));
             imageView.setImageResource(course.getPictureId());
-//            closeView.setImageResource(course.isClose() ? );
+            lockView.setImageResource(course.isClose() ? R.drawable.ic_locked : R.drawable.ic_unlocked);
+            itemView.setOnClickListener(v -> onCourseClickListener.onCourseClick(course));
         }
     }
 }
