@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.develop.loginov.fullstack.R;
@@ -40,22 +41,25 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     class ViewHolder extends RecyclerView.ViewHolder {
         final Context context;
         final TextView nameCourseView;
-        final TextView textDescriptionView;
+        final TextView authorView;
         final TextView amountMembersView;
+        final ImageView closeView;
 
         ViewHolder(final View itemView) {
             super(itemView);
             context = itemView.getContext();
             nameCourseView = (TextView) itemView.findViewById(R.id.item_course__name);
-            textDescriptionView = (TextView) itemView.findViewById(R.id.item_course__description);
+            authorView = (TextView) itemView.findViewById(R.id.item_course__author);
             amountMembersView = (TextView) itemView.findViewById(R.id.item_course__members);
+            closeView = (ImageView) itemView.findViewById(R.id.item_course__close);
         }
 
         void bind(final Course course) {
             assert course != null;
             nameCourseView.setText(course.getAuthorName());
-            textDescriptionView.setText(course.getDescription());
+            authorView.setText(course.getAuthorName());
             amountMembersView.setText(context.getString(R.string.members, course.getCurrentMembersCount(), course.getMaxMemberCount()));
+//            closeView.setImageResource(course.isClose() ? );
         }
     }
 }

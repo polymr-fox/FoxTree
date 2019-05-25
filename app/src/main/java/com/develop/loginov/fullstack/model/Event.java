@@ -12,22 +12,27 @@ public class Event {
     private final String description;
     private final String authorName;
     private final String pictureUrl;
+    private String date;
+    private String place;
     private final List<Record> records;
+    private int countMembers;
 
     public Event(int id,
                  int pictureId,
                  int authorId,
                  String name,
                  String description,
-                 String authorName,
-                 List<Record> records) {
+                 String authorName, String date, String place, List<Record> records, int countMembers) {
         this.id = id;
         this.pictureId = pictureId;
         this.authorId = authorId;
         this.name = name;
         this.description = description;
         this.authorName = authorName;
+        this.date = date;
+        this.place = place;
         this.records = records;
+        this.countMembers = countMembers;
         pictureUrl = "";
     }
 
@@ -37,15 +42,17 @@ public class Event {
                  String name,
                  String description,
                  String authorName,
-                 String pictureUrl,
-                 List<Record> records) {
+                 String pictureUrl, String date, String place, List<Record> records, int countMembers) {
         this.id = id;
         this.authorId = authorId;
         this.name = name;
         this.description = description;
         this.authorName = authorName;
         this.pictureUrl = pictureUrl;
+        this.date = date;
+        this.place = place;
         this.records = records;
+        this.countMembers = countMembers;
         pictureId = -1;
     }
 
@@ -84,5 +91,29 @@ public class Event {
 
     public List<Record> getRecords() {
         return records;
+    }
+
+    public int getCountMembers() {
+        return countMembers;
+    }
+
+    public void setCountMembers(int countMembers) {
+        this.countMembers = countMembers;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
     }
 }

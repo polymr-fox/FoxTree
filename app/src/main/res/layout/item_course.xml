@@ -7,91 +7,119 @@
     android:layout_margin="@dimen/default_vertical_margin"
     android:orientation="horizontal">
 
-    <android.support.constraint.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/item_course__name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-
-            android:textAppearance="?attr/textAppearanceListItem"
-
-            app:layout_constraintBottom_toTopOf="@id/item_course__line"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            tools:text="@string/name_sample" />
-
-        <View
-            android:id="@+id/item_course__line"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"
-            app:layout_constraintBottom_toTopOf="@id/item_course__bottom_layout"
-            app:layout_constraintTop_toBottomOf="@id/item_course__name" />
+            android:layout_height="@dimen/huge_icon_size"
+            android:src="@drawable/sample_image"
+            android:scaleType="centerCrop" />
 
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/item_course__bottom_layout"
+        <android.support.design.card.MaterialCardView
             android:layout_width="match_parent"
+            android:layout_gravity="bottom"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_course__line">
+            app:cardCornerRadius="@dimen/corner_radius"
+            android:layout_margin="@dimen/default_half_vertical_margin">
 
-            <TextView
-                android:id="@+id/item_course__author"
-                android:layout_width="wrap_content"
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/default_vertical_margin"
-                android:textAppearance="?attr/textAppearanceListItem"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/item_course__image_member"
-                app:layout_constraintHorizontal_chainStyle="spread_inside"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Петр Иванов" />
+                android:background="@color/grey">
 
-            <ImageView
-                android:id="@+id/item_course__image_member"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_margin="@dimen/default_vertical_margin"
-                android:src="@mipmap/ic_launcher"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/item_course__members"
-                app:layout_constraintStart_toEndOf="@id/item_course__author"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/item_course__name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
 
-            <TextView
-                android:id="@+id/item_course__members"
+                    android:textSize="@dimen/default_text_title_size"
+                    android:textAppearance="?attr/textAppearanceListItem"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/default_vertical_margin"
-                android:textAppearance="?attr/textAppearanceListItem"
-                app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/item_course__line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
 
-                app:layout_constraintStart_toEndOf="@id/item_course__image_member"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="10 / 20" />
+                    tools:text="@string/name_sample" />
 
-            <ImageView
-                android:id="@+id/item_course__close"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_margin="@dimen/default_vertical_margin"
-                android:src="@mipmap/ic_launcher"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </android.support.constraint.ConstraintLayout>
+                <View
+                    android:id="@+id/item_course__line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintBottom_toTopOf="@id/item_course__bottom_layout"
+                    app:layout_constraintTop_toBottomOf="@id/item_course__name" />
 
 
-    </android.support.constraint.ConstraintLayout>
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/item_course__bottom_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_course__line">
+
+                    <TextView
+                        android:id="@+id/item_course__author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/default_vertical_margin"
+
+                        android:textSize="@dimen/default_text_size"
+                        android:textAppearance="?attr/textAppearanceListItem"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/item_course__image_member"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Петр Иванов" />
+
+                    <ImageView
+                        android:id="@+id/item_course__image_member"
+                        android:layout_width="@dimen/small_icon_size"
+                        android:layout_height="@dimen/small_icon_size"
+                        android:layout_margin="@dimen/default_vertical_margin"
+                        android:src="@mipmap/ic_launcher"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/item_course__members"
+                        app:layout_constraintStart_toEndOf="@id/item_course__author"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/item_course__members"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/default_vertical_margin"
+
+                        android:textSize="@dimen/default_text_size"
+                        android:textAppearance="?attr/textAppearanceListItem"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/item_course__image_member"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="10 / 20" />
+
+                    <ImageView
+                        android:id="@+id/item_course__close"
+                        android:layout_width="@dimen/small_icon_size"
+                        android:layout_height="@dimen/small_icon_size"
+                        android:layout_margin="@dimen/default_vertical_margin"
+                        android:src="@mipmap/ic_launcher"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </android.support.constraint.ConstraintLayout>
+
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.design.card.MaterialCardView>
+
+    </FrameLayout>
+
+
 
 </android.support.v7.widget.CardView>

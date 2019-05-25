@@ -24,11 +24,12 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/item_event__right_layout"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
 
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/item_event__image">
+            app:layout_constraintStart_toEndOf="@id/item_event__image"
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <TextView
@@ -37,8 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/default_vertical_margin"
 
-                android:textSize="@dimen/default_text_title_size"
                 android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="@dimen/default_text_title_size"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -57,16 +58,64 @@
                 tools:text="15/02/2019 12:05" />
 
             <View
+                android:id="@+id/item_event__line"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="@color/grey"
                 android:layout_marginStart="@dimen/default_vertical_margin"
                 android:layout_marginEnd="@dimen/default_vertical_margin"
-                app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/grey"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_event__date"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_event__date" />
 
+            <TextView
+                android:id="@+id/item_event__place"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="@dimen/default_vertical_margin"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="@dimen/default_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/item_event__line"
+
+                tools:text="СпбПУ, ГЗ, 237" />
+
+            <TextView
+                android:id="@+id/item_event__author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_vertical_margin"
+                android:textAppearance="?attr/textAppearanceListItem"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                tools:text="Пётр Иванов" />
+
+            <ImageView
+                android:id="@+id/item_event__image_member"
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:layout_margin="@dimen/default_vertical_margin"
+
+                android:src="@drawable/ic_dashboard_black_24dp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/item_event__count_members" />
+
+            <TextView
+                android:id="@+id/item_event__count_members"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_vertical_margin"
+
+                android:textAppearance="?attr/textAppearanceListItem"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                tools:text="1023" />
 
         </android.support.constraint.ConstraintLayout>
 

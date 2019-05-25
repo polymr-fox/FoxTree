@@ -11,4 +11,13 @@
     <dimen name="default_half_vertical_margin">5dp</dimen>
     <dimen name="default_text_size">18sp</dimen>
     <dimen name="default_text_title_size">24sp</dimen>
+
+    <dimen name="small_icon_size">24dp</dimen>
+    <dimen name="big_icon_size">120dp</dimen>
+    <dimen name="huge_icon_size">300dp</dimen>
+
+    <dimen name="corner_radius">20dp</dimen>
+
+
+
 </resources>

@@ -9,6 +9,7 @@ public class Course {
     private String description;
     private int maxMemberCount;
     private int currentMembersCount;
+    private boolean close;
 
     public Course(final int id,
                   final int authorId,
@@ -16,7 +17,8 @@ public class Course {
                   final String authorName,
                   final String description,
                   final int maxMemberCount,
-                  final int currentMembersCount) {
+                  final int currentMembersCount,
+                  final boolean close) {
         this.id = id;
         this.authorId = authorId;
         this.name = name;
@@ -24,6 +26,7 @@ public class Course {
         this.description = description;
         this.maxMemberCount = maxMemberCount;
         this.currentMembersCount = currentMembersCount;
+        this.close = close;
     }
 
     public void setName(String name) {
@@ -72,5 +75,13 @@ public class Course {
 
     public int getCurrentMembersCount() {
         return currentMembersCount;
+    }
+
+    public boolean isClose() {
+        return close;
+    }
+
+    public void setClose(boolean close) {
+        this.close = close;
     }
 }

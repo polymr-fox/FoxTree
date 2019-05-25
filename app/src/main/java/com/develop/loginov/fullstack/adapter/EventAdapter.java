@@ -1,10 +1,12 @@
 package com.develop.loginov.fullstack.adapter;
 
+import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -15,10 +17,10 @@ import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
 
-    private final List<Event> mValues;
+    private final List<Event> events;
 
     public EventAdapter(List<Event> items) {
-        mValues = items;
+        events = items;
     }
 
     @NonNull
@@ -30,26 +32,42 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
+        holder.bind(events.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return events.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        final View mView;
-        final TextView mIdView;
-        final TextView mContentView;
-        Event mItem;
+        private final TextView nameView;
+        private final TextView authorView;
+        private final TextView membersView;
+        private final TextView placeView;
+        private final TextView dateView;
+        private final ImageView imageView;
 
-        ViewHolder(View view) {
-            super(view);
-            mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_course__name);
-            mContentView = (TextView) view.findViewById(R.id.item_course__description);
+
+        ViewHolder(final View itemView) {
+            super(itemView);
+            nameView = itemView.findViewById(R.id.item_event__name);
+            authorView = itemView.findViewById(R.id.item_event__author);
+            membersView = itemView.findViewById(R.id.item_event__count_members);
+            placeView = itemView.findViewById(R.id.item_event__place);
+            dateView = itemView.findViewById(R.id.item_event__date);
+            imageView = itemView.findViewById(R.id.item_event__image);
         }
 
+        @SuppressLint("SetTextI18n")
+        void bind(final Event event) {
+            assert event != null;
+            nameView.setText(event.getName());
+            authorView.setText(event.getAuthorName());
+            membersView.setText(Integer.toString(event.getCountMembers()));
+            placeView.setText(event.getPlace());
+            dateView.setText(event.getDate());
+            imageView.setImageResource(event.getPictureId());
+        }
     }
 }
