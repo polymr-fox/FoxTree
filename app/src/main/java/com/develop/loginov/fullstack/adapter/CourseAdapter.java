@@ -1,5 +1,6 @@
 package com.develop.loginov.fullstack.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,46 +14,48 @@ import com.develop.loginov.fullstack.model.Course;
 import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
+    private final List<Course> courses;
 
-    private final List<Course> mValues;
-
-    public CourseAdapter(List<Course> items) {
-        mValues = items;
+    public CourseAdapter(final List<Course> items) {
+        courses = items;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_course, parent, false);
+    public ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_course, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
+        holder.bind(courses.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return courses.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        final View mView;
-        final TextView mIdView;
-        final TextView mContentView;
-        Course mItem;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        final Context context;
+        final TextView nameCourseView;
+        final TextView textDescriptionView;
+        final TextView amountMembersView;
 
-        ViewHolder(View view) {
-            super(view);
-            mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.content);
+        ViewHolder(final View itemView) {
+            super(itemView);
+            context = itemView.getContext();
+            nameCourseView = (TextView) itemView.findViewById(R.id.item_course__name);
+            textDescriptionView = (TextView) itemView.findViewById(R.id.item_course__description);
+            amountMembersView = (TextView) itemView.findViewById(R.id.item_course__members);
         }
 
-        @Override
-        public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+        void bind(final Course course) {
+            assert course != null;
+            nameCourseView.setText(course.getAuthorName());
+            textDescriptionView.setText(course.getDescription());
+            amountMembersView.setText(context.getString(R.string.members, course.getCurrentMembersCount(), course.getMaxMemberCount()));
         }
     }
 }

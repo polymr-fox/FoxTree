@@ -29,7 +29,7 @@ public class CourseFragment extends Fragment {
     public CourseFragment() {
     }
 
-    public static CourseFragment newInstance(int columnCount) {
+    public static CourseFragment newInstance(final int columnCount) {
         CourseFragment fragment = new CourseFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
