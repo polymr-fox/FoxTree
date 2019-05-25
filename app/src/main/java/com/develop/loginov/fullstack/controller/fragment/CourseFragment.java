@@ -14,9 +14,7 @@ import android.view.ViewGroup;
 import com.develop.loginov.fullstack.R;
 import com.develop.loginov.fullstack.adapter.CourseAdapter;
 import com.develop.loginov.fullstack.model.Course;
-import com.develop.loginov.fullstack.model.Event;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -52,9 +50,8 @@ public class CourseFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_course_list, container, false);
+        final View view = inflater.inflate(R.layout.fragment_course_list, container, false);
 
-        // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
@@ -72,12 +69,7 @@ public class CourseFragment extends Fragment {
     }
 
     private List<Course> getCourses() {
-        return Arrays.asList(Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12),
-                             Course.of(getString(R.string.name_sample), "Пётр Иванов", R.drawable.sample_image, 30, 12),
-                             Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12),
-                             Course.of(getString(R.string.name_sample), "Пётр Иванов", R.drawable.sample_image, 30, 12),
-                             Course.of("Android", "Пётр Иванов", R.drawable.sample_image, 25, 18));
-
+        return Arrays.asList(Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12), Course.of(getString(R.string.name_sample), "Пётр Иванов", R.drawable.sample_image, 30, 12), Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12), Course.of(getString(R.string.name_sample), "Пётр Иванов", R.drawable.sample_image, 30, 12), Course.of("Android", "Пётр Иванов", R.drawable.sample_image, 25, 18));
     }
 
 
