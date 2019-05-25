@@ -4,26 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/default_vertical_margin"
-    android:orientation="horizontal">
+    android:layout_marginTop="@dimen/default_half_vertical_margin"
+    android:layout_marginBottom="@dimen/default_half_vertical_margin"
+    android:elevation="5dp"
+    android:orientation="horizontal"
+    android:translationX="2dp"
+    android:translationY="2dp">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/item_course_image_course"
             android:layout_width="match_parent"
             android:layout_height="@dimen/huge_icon_size"
-            android:src="@drawable/sample_image"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/sample_image" />
 
 
         <android.support.design.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_gravity="bottom"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/corner_radius"
-            android:layout_margin="@dimen/default_half_vertical_margin">
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/default_half_vertical_margin"
+            app:cardCornerRadius="@dimen/corner_radius">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -34,10 +39,10 @@
                     android:id="@+id/item_course__name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/text_margin"
+                    android:layout_margin="@dimen/default_vertical_margin"
 
-                    android:textSize="@dimen/default_text_title_size"
                     android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="@dimen/default_text_title_size"
 
                     app:layout_constraintBottom_toTopOf="@id/item_course__line"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -68,11 +73,10 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/default_vertical_margin"
 
-                        android:textSize="@dimen/default_text_size"
                         android:textAppearance="?attr/textAppearanceListItem"
+                        android:textSize="@dimen/default_text_size"
 
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/item_course__image_member"
                         app:layout_constraintHorizontal_chainStyle="spread_inside"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -82,11 +86,10 @@
                         android:id="@+id/item_course__image_member"
                         android:layout_width="@dimen/small_icon_size"
                         android:layout_height="@dimen/small_icon_size"
-                        android:layout_margin="@dimen/default_vertical_margin"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@drawable/ic_people"
+                        android:layout_margin="@dimen/default_half_vertical_margin"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/item_course__members"
-                        app:layout_constraintStart_toEndOf="@id/item_course__author"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -95,11 +98,11 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/default_vertical_margin"
 
-                        android:textSize="@dimen/default_text_size"
                         android:textAppearance="?attr/textAppearanceListItem"
+                        android:textSize="@dimen/default_text_size"
 
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/item_course__image_member"
+                        app:layout_constraintEnd_toStartOf="@id/item_course__close"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="10 / 20" />
 
@@ -108,7 +111,7 @@
                         android:layout_width="@dimen/small_icon_size"
                         android:layout_height="@dimen/small_icon_size"
                         android:layout_margin="@dimen/default_vertical_margin"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@drawable/ic_locked"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -119,7 +122,6 @@
         </android.support.design.card.MaterialCardView>
 
     </FrameLayout>
-
 
 
 </android.support.v7.widget.CardView>

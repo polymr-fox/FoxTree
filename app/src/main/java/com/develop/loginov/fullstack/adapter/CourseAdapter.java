@@ -25,6 +25,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_course, parent, false);
+//        RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        view.setLayoutParams(lp);
         return new ViewHolder(view);
     }
 
@@ -44,6 +46,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         final TextView authorView;
         final TextView amountMembersView;
         final ImageView closeView;
+        final ImageView imageView;
 
         ViewHolder(final View itemView) {
             super(itemView);
@@ -52,13 +55,15 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
             authorView = (TextView) itemView.findViewById(R.id.item_course__author);
             amountMembersView = (TextView) itemView.findViewById(R.id.item_course__members);
             closeView = (ImageView) itemView.findViewById(R.id.item_course__close);
+            imageView = (ImageView) itemView.findViewById(R.id.item_course_image_course);
         }
 
         void bind(final Course course) {
             assert course != null;
-            nameCourseView.setText(course.getAuthorName());
+            nameCourseView.setText(course.getName());
             authorView.setText(course.getAuthorName());
             amountMembersView.setText(context.getString(R.string.members, course.getCurrentMembersCount(), course.getMaxMemberCount()));
+            imageView.setImageResource(course.getPictureId());
 //            closeView.setImageResource(course.isClose() ? );
         }
     }

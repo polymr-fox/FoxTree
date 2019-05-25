@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/default_vertical_margin">
+    android:layout_margin="@dimen/default_half_vertical_margin">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,9 +12,14 @@
 
         <ImageView
             android:id="@+id/item_event__image"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_margin="@dimen/default_vertical_margin"
+            android:layout_width="@dimen/big_icon_size"
+            android:layout_height="@dimen/big_icon_size"
+
+            android:layout_marginTop="@dimen/default_vertical_margin"
+            android:layout_marginBottom="@dimen/default_vertical_margin"
+            android:layout_marginStart="@dimen/default_vertical_margin"
+            android:layout_marginEnd="@dimen/default_half_vertical_margin"
+
             android:src="@mipmap/ic_launcher"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/item_event__right_layout"
@@ -24,7 +29,12 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/item_event__right_layout"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/default_vertical_margin"
+            android:layout_marginBottom="@dimen/default_vertical_margin"
+            android:layout_marginStart="@dimen/default_half_vertical_margin"
+            android:layout_marginEnd="@dimen/default_vertical_margin"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +46,7 @@
                 android:id="@+id/item_event__name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/default_vertical_margin"
+                android:layout_margin="@dimen/default_half_vertical_margin"
 
                 android:textAppearance="?attr/textAppearanceListItem"
                 android:textSize="@dimen/default_text_title_size"
@@ -50,8 +60,8 @@
                 android:id="@+id/item_event__date"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_vertical_margin"
-                android:layout_marginEnd="@dimen/default_vertical_margin"
+                android:layout_marginStart="@dimen/default_half_vertical_margin"
+                android:layout_marginEnd="@dimen/default_half_vertical_margin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/item_event__name"
@@ -61,8 +71,8 @@
                 android:id="@+id/item_event__line"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_marginStart="@dimen/default_vertical_margin"
-                android:layout_marginEnd="@dimen/default_vertical_margin"
+                android:layout_marginStart="@dimen/default_half_vertical_margin"
+                android:layout_marginEnd="@dimen/default_half_vertical_margin"
                 android:background="@color/grey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -72,21 +82,20 @@
                 android:id="@+id/item_event__place"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-
-                android:layout_margin="@dimen/default_vertical_margin"
+                android:layout_margin="@dimen/default_half_vertical_margin"
                 android:textAppearance="?attr/textAppearanceListItem"
                 android:textSize="@dimen/default_text_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/item_event__line"
-
+                app:layout_constraintBottom_toTopOf="@id/item_event__author"
                 tools:text="СпбПУ, ГЗ, 237" />
 
             <TextView
                 android:id="@+id/item_event__author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/default_vertical_margin"
+                android:layout_margin="@dimen/default_half_vertical_margin"
                 android:textAppearance="?attr/textAppearanceListItem"
 
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -98,9 +107,9 @@
                 android:id="@+id/item_event__image_member"
                 android:layout_width="@dimen/small_icon_size"
                 android:layout_height="@dimen/small_icon_size"
-                android:layout_margin="@dimen/default_vertical_margin"
+                android:layout_margin="@dimen/default_half_vertical_margin"
 
-                android:src="@drawable/ic_dashboard_black_24dp"
+                android:src="@drawable/ic_people"
 
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/item_event__count_members" />
@@ -109,7 +118,7 @@
                 android:id="@+id/item_event__count_members"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/default_vertical_margin"
+                android:layout_margin="@dimen/default_half_vertical_margin"
 
                 android:textAppearance="?attr/textAppearanceListItem"
                 app:layout_constraintBottom_toBottomOf="parent"

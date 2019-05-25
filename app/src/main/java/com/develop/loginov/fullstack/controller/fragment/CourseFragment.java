@@ -14,8 +14,10 @@ import android.view.ViewGroup;
 import com.develop.loginov.fullstack.R;
 import com.develop.loginov.fullstack.adapter.CourseAdapter;
 import com.develop.loginov.fullstack.model.Course;
+import com.develop.loginov.fullstack.model.Event;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CourseFragment extends Fragment {
@@ -61,12 +63,22 @@ public class CourseFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            list = new ArrayList<>();
+            list = getCourses();
             adapter = new CourseAdapter(list);
 
             recyclerView.setAdapter(adapter);
         }
         return view;
     }
+
+    private List<Course> getCourses() {
+        return Arrays.asList(Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12),
+                             Course.of(getString(R.string.name_sample), "Пётр Иванов", R.drawable.sample_image, 30, 12),
+                             Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12),
+                             Course.of(getString(R.string.name_sample), "Пётр Иванов", R.drawable.sample_image, 30, 12),
+                             Course.of("Android", "Пётр Иванов", R.drawable.sample_image, 25, 18));
+
+    }
+
 
 }

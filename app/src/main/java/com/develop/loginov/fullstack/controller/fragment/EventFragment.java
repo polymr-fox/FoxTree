@@ -16,11 +16,12 @@ import com.develop.loginov.fullstack.R;
 import com.develop.loginov.fullstack.model.Event;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class EventFragment extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
-    private int mColumnCount = 2;
+    private int mColumnCount = 1;
 
     private List<Event> list;
     private RecyclerView.Adapter adapter;
@@ -61,12 +62,21 @@ public class EventFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            list = new ArrayList<>();
+            list = getEvents();
             adapter = new EventAdapter(list);
             recyclerView.setAdapter(adapter);
         }
         return view;
     }
 
-
+    private List<Event> getEvents() {
+        return Arrays.asList(Event.of("BDSMeetup", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 10:00", "СПБПУ, ГЗ, 237", 10),
+                             Event.of("PolyHack", "Аркадий Логинов", R.mipmap.ic_launcher_round, "10/09/2019 13:00", "СПБПУ, НИК, А 2.17.1", 50),
+                             Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
+                             Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
+                             Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
+                             Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
+                             Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
+                             Event.of("PolyHui", "Аркадий Логинов", R.mipmap.ic_launcher_round, "12/12/2019 11:00", "СПБПУ, 11к, 237", 20));
+    }
 }

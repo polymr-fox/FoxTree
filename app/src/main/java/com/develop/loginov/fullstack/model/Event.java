@@ -1,5 +1,6 @@
 package com.develop.loginov.fullstack.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,7 +23,11 @@ public class Event {
                  int authorId,
                  String name,
                  String description,
-                 String authorName, String date, String place, List<Record> records, int countMembers) {
+                 String authorName,
+                 String date,
+                 String place,
+                 List<Record> records,
+                 int countMembers) {
         this.id = id;
         this.pictureId = pictureId;
         this.authorId = authorId;
@@ -42,7 +47,11 @@ public class Event {
                  String name,
                  String description,
                  String authorName,
-                 String pictureUrl, String date, String place, List<Record> records, int countMembers) {
+                 String pictureUrl,
+                 String date,
+                 String place,
+                 List<Record> records,
+                 int countMembers) {
         this.id = id;
         this.authorId = authorId;
         this.name = name;
@@ -54,6 +63,15 @@ public class Event {
         this.records = records;
         this.countMembers = countMembers;
         pictureId = -1;
+    }
+
+    public static Event of(final String name,
+                           final String authorName,
+                           final int pictureId,
+                           final String date,
+                           final String place,
+                           final int countMembers) {
+        return new Event(0, pictureId, 0, name, "authorName", authorName, date, place, new ArrayList<>(), countMembers);
     }
 
     public void addAll(final List<Record> records) {
