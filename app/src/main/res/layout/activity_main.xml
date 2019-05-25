@@ -70,7 +70,6 @@
                             app:layout_constraintStart_toStartOf="parent" />
 
 
-
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:layout_width="@dimen/big_icon_size"
                             android:layout_height="@dimen/big_icon_size"
@@ -98,15 +97,23 @@
 
         </android.support.design.widget.AppBarLayout>
 
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"
+            android:layout_marginBottom="?attr/actionBarSize"
+            >
+
+            <FrameLayout
+                android:id="@+id/activity_main__container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.v4.widget.NestedScrollView>
 
     </android.support.design.widget.CoordinatorLayout>
 
-    <FrameLayout
-        android:id="@+id/activity_main__container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/activity_main__nav_view"
-        app:layout_constraintTop_toBottomOf="@id/activity_main__coordinator_layout" />
+
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/activity_main__nav_view"
