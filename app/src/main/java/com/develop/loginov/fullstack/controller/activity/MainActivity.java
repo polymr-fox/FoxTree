@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements CourseFragment.On
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    changeFragment(HomeFragment.newInstance(), getSupportFragmentManager(), R.id.activity_main__container);
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+//                    changeFragment(HomeFragment.newInstance(), getSupportFragmentManager(), R.id.activity_main__container);
                     return true;
                 case R.id.navigation_events:
                     changeFragment(new EventFragment(), getSupportFragmentManager(), R.id.activity_main__container);

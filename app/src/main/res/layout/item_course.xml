@@ -28,12 +28,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_margin="@dimen/default_half_vertical_margin"
+            app:cardBackgroundColor="@color/background"
             app:cardCornerRadius="@dimen/corner_radius">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/grey">
+                >
 
                 <TextView
                     android:id="@+id/item_course__name"
@@ -116,7 +117,6 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </android.support.constraint.ConstraintLayout>
-
 
             </android.support.constraint.ConstraintLayout>
         </android.support.design.card.MaterialCardView>
