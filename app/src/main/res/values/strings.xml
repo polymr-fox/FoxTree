@@ -7,4 +7,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="members">%1$d / %2$d</string>
+    <string name="name_sample">Искусство и наука: Проект VITAE - множество отпечатков ладони на лунном цветке</string>
+    <string name="big_text_sample">Markwon is a markdown library for Android. It parses
+         markdown following commonmark-spec with the help of amazing commonmark-java l
+         ibrary and renders result as Android-native Spannables. No HTML is involved as
+         an intermediate step. No WebView is required. It's extremely fast, feature-rich
+         and extensible.</string>
+
 </resources>
