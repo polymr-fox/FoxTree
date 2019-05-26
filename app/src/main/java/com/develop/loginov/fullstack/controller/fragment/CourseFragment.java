@@ -16,9 +16,14 @@ import com.develop.loginov.fullstack.R;
 import com.develop.loginov.fullstack.adapter.CourseAdapter;
 import com.develop.loginov.fullstack.listeners.OnItemClickListener;
 import com.develop.loginov.fullstack.model.Course;
+import com.develop.loginov.fullstack.model.Event;
+import com.develop.loginov.fullstack.model.helper.HardCodeHelper;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.*;
 
 public class CourseFragment extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -59,27 +64,43 @@ public class CourseFragment extends Fragment {
             final Context context = view.getContext();
             final RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            list = getCourses();
+            list = new ArrayList<>();
             adapter = new CourseAdapter(list, onCourseClickListener);
             recyclerView.setAdapter(adapter);
+            getCourses(list, adapter);
         }
     }
 
     private List<Course> getCourses() {
-        return Arrays.asList(Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12),
-                             Course.of(getString(R.string.name_sample),
-                                       "Пётр Иванов",
-                                       R.drawable.sample_image,
-                                       30,
-                                       12),
-                             Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12),
-                             Course.of(getString(R.string.name_sample),
-                                       "Пётр Иванов",
-                                       R.drawable.sample_image,
-                                       30,
-                                       12),
-                             Course.of("Android", "Пётр Иванов", R.drawable.sample_image, 25, 18));
+        final List<Course> list = new ArrayList<>();
+        for (int i = 0; i < 15; i++) {
+            int max = getMembers() + 10;
+            list.add(Course.of(getName(), getAuthorName(), getDrawable(), max, max - 8));
+        }
+
+        return list;
+//        return Arrays.asList(Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12),
+//                             Course.of(getString(R.string.name_sample),
+//                                       "Пётр Иванов",
+//                                       R.drawable.sample_image,
+//                                       30,
+//                                       12),
+//                             Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12),
+//                             Course.of(getString(R.string.name_sample),
+//                                       "Пётр Иванов",
+//                                       R.drawable.sample_image,
+//                                       30,
+//                                       12),
+//                             Course.of("Android", "Пётр Иванов", R.drawable.sample_image, 25, 18));
     }
+
+    private void getCourses(final List<Course> courses, final RecyclerView.Adapter adapter) {
+        new Thread(() -> {
+            courses.addAll(getCourses());
+            adapter.notifyDataSetChanged();
+        }).start();
+    }
+
 
     @Override
     public void onAttach(Context context) {

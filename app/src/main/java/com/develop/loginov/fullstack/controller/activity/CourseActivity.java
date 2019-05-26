@@ -36,10 +36,12 @@ public class CourseActivity extends AppCompatActivity {
         records = getRecords();
         adapter = new RecordAdapter(records);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,
+                                                              LinearLayoutManager.VERTICAL,
+                                                              false));
     }
 
-    void setCustomActionBar() {
+    private void setCustomActionBar() {
         final Toolbar toolbar = findViewById(R.id.activity_course__toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -79,6 +81,17 @@ public class CourseActivity extends AppCompatActivity {
     }
 
     private List<Record> getRecords() {
-        return Arrays.asList(Record.of("IOS Разработка", "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"), Record.of("IOS Разработка", "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"), Record.of("IOS Разработка", "clmkekcmekmkekmceklamlcewfjfjefiwjiwefjwe"), Record.of("IOS Разработка", "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"), Record.of("IOS Разработка", "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"), Record.of("IOS Разработка", "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"));
+        return Arrays.asList(Record.of("IOS Разработка",
+                                       "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"),
+                             Record.of("IOS Разработка",
+                                       "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"),
+                             Record.of("IOS Разработка",
+                                       "clmkekcmekmkekmceklamlcewfjfjefiwjiwefjwe"),
+                             Record.of("IOS Разработка",
+                                       "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"),
+                             Record.of("IOS Разработка",
+                                       "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"),
+                             Record.of("IOS Разработка",
+                                       "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"));
     }
 }

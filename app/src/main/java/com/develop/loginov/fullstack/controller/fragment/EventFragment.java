@@ -4,21 +4,26 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.develop.loginov.fullstack.adapter.EventAdapter;
 import com.develop.loginov.fullstack.R;
+import com.develop.loginov.fullstack.adapter.EventAdapter;
 import com.develop.loginov.fullstack.listeners.OnItemClickListener;
 import com.develop.loginov.fullstack.model.Event;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getAuthorName;
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getDate;
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getDrawable;
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getMembers;
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getName;
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getPlace;
 
 public class EventFragment extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -47,8 +52,7 @@ public class EventFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_event_list, container, false);
 
@@ -56,23 +60,34 @@ public class EventFragment extends Fragment {
         if (view instanceof RecyclerView) {
             final Context context = view.getContext();
             final RecyclerView recyclerView = (RecyclerView) view;
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            list = getEvents();
+            recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            list = new ArrayList<>();
             adapter = new EventAdapter(list, onEventClickListener);
             recyclerView.setAdapter(adapter);
+            getEvents(list, adapter);
         }
         return view;
     }
 
     private List<Event> getEvents() {
-        return Arrays.asList(Event.of("BDSMeetup", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 10:00", "СПБПУ, ГЗ, 237", 10),
-                             Event.of("PolyHack", "Аркадий Логинов", R.mipmap.ic_launcher_round, "10/09/2019 13:00", "СПБПУ, НИК, А 2.17.1", 50),
-                             Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
-                             Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
-                             Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
-                             Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
-                             Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
-                             Event.of("PolyHui", "Аркадий Логинов", R.mipmap.ic_launcher_round, "12/12/2019 11:00", "СПБПУ, 11к, 237", 20));
+        List<Event> events = new ArrayList<>(15);
+        for (int i = 0; i < 15; i++) {
+            events.add(Event.of(getName(),
+                                getAuthorName(),
+                                getDrawable(),
+                                getDate(),
+                                getPlace(),
+                                getMembers()));
+        }
+
+        return events;
+    }
+
+    private void getEvents(final List<Event> events, final RecyclerView.Adapter adapter) {
+        new Thread(() -> {
+            events.addAll(getEvents());
+            adapter.notifyDataSetChanged();
+        }).start();
     }
 
     @Override

@@ -10,17 +10,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import com.develop.loginov.fullstack.R;
 import com.develop.loginov.fullstack.adapter.ArticleAdapter;
 import com.develop.loginov.fullstack.listeners.OnItemClickListener;
 import com.develop.loginov.fullstack.model.Article;
+import com.develop.loginov.fullstack.model.helper.HardCodeHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.*;
 
 public class ArticleFragment extends Fragment {
 
@@ -64,7 +66,6 @@ public class ArticleFragment extends Fragment {
         }
     }
 
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -82,36 +83,49 @@ public class ArticleFragment extends Fragment {
     }
 
     private List<Article> getArticles() {
-        final Random random = new Random();
-        return Arrays.asList(Article.of(getString(R.string.sample_course_name),
-                                        getString(R.string.big_text),
-                                        getString(R.string.sample_person_name),
-                                        random.nextInt(50) - 25,
-                                        "12/10/2019"),
-                             Article.of(getString(R.string.sample_course_name),
-                                        getString(R.string.big_text),
-                                        getString(R.string.sample_person_name),
-                                        random.nextInt(50) - 25,
-                                        "12/10/2019"),
-                             Article.of(getString(R.string.sample_course_name),
-                                        getString(R.string.big_text),
-                                        getString(R.string.sample_person_name),
-                                        random.nextInt(50) - 25,
-                                        "12/10/2019"),
-                             Article.of(getString(R.string.sample_course_name),
-                                        getString(R.string.big_text),
-                                        getString(R.string.sample_person_name),
-                                        random.nextInt(50) - 25,
-                                        "12/10/2019"),
-                             Article.of(getString(R.string.sample_course_name),
-                                        getString(R.string.big_text),
-                                        getString(R.string.sample_person_name),
-                                        random.nextInt(50) - 25,
-                                        "12/10/2019"),
-                             Article.of(getString(R.string.sample_course_name),
-                                        getString(R.string.big_text),
-                                        getString(R.string.sample_person_name),
-                                        random.nextInt(50) - 25,
-                                        "12/10/2019"));
+        final List<Article> articles = new ArrayList<>(15);
+        for (int i = 0; i < 15; i++) {
+            articles.add(Article.of(getName(), "vdvd", getAuthorName(), getRate(), getDate()));
+        }
+        return articles;
+//
+//        return Arrays.asList(Article.of(getString(R.string.sample_course_name),
+//                                        getString(R.string.big_text),
+//                                        getString(R.string.sample_person_name),
+//                                        random.nextInt(50) - 25,
+//                                        "12/10/2019"),
+//                             Article.of(getString(R.string.sample_course_name),
+//                                        getString(R.string.big_text),
+//                                        getString(R.string.sample_person_name),
+//                                        random.nextInt(50) - 25,
+//                                        "12/10/2019"),
+//                             Article.of(getString(R.string.sample_course_name),
+//                                        getString(R.string.big_text),
+//                                        getString(R.string.sample_person_name),
+//                                        random.nextInt(50) - 25,
+//                                        "12/10/2019"),
+//                             Article.of(getString(R.string.sample_course_name),
+//                                        getString(R.string.big_text),
+//                                        getString(R.string.sample_person_name),
+//                                        random.nextInt(50) - 25,
+//                                        "12/10/2019"),
+//                             Article.of(getString(R.string.sample_course_name),
+//                                        getString(R.string.big_text),
+//                                        getString(R.string.sample_person_name),
+//                                        random.nextInt(50) - 25,
+//                                        "12/10/2019"),
+//                             Article.of(getString(R.string.sample_course_name),
+//                                        getString(R.string.big_text),
+//                                        getString(R.string.sample_person_name),
+//                                        random.nextInt(50) - 25,
+//                                        "12/10/2019"));
     }
+
+    private void getArticles(final List<Article> articles, final RecyclerView.Adapter adapter) {
+        new Thread(() -> {
+            articles.addAll(getArticles());
+            adapter.notifyDataSetChanged();
+        }).start();
+    }
+
 }
