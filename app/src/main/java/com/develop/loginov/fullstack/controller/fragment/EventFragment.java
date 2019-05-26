@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.develop.loginov.fullstack.adapter.EventAdapter;
 import com.develop.loginov.fullstack.R;
+import com.develop.loginov.fullstack.listeners.OnItemClickListener;
 import com.develop.loginov.fullstack.model.Event;
 
 import java.util.ArrayList;
@@ -21,10 +22,10 @@ import java.util.List;
 
 public class EventFragment extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
-    private int mColumnCount = 1;
 
     private List<Event> list;
     private RecyclerView.Adapter adapter;
+    private OnItemClickListener onEventClickListener;
 
     public EventFragment() {
     }
@@ -42,7 +43,6 @@ public class EventFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
     }
 
@@ -56,14 +56,9 @@ public class EventFragment extends Fragment {
         if (view instanceof RecyclerView) {
             final Context context = view.getContext();
             final RecyclerView recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-            }
-
             list = getEvents();
-            adapter = new EventAdapter(list);
+            adapter = new EventAdapter(list, onEventClickListener);
             recyclerView.setAdapter(adapter);
         }
         return view;
@@ -78,5 +73,21 @@ public class EventFragment extends Fragment {
                              Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
                              Event.of("PolyContest", "Петр Иванов", R.mipmap.ic_launcher_round, "12/12/2019 12:00", "СПБПУ, Гидрак, 237", 50),
                              Event.of("PolyHui", "Аркадий Логинов", R.mipmap.ic_launcher_round, "12/12/2019 11:00", "СПБПУ, 11к, 237", 20));
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnItemClickListener) {
+            onEventClickListener = (OnItemClickListener) context;
+        } else {
+            throw new RuntimeException(context.toString() + " must implement OnListFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        onEventClickListener = null;
     }
 }

@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 
 import com.develop.loginov.fullstack.R;
+import com.develop.loginov.fullstack.listeners.OnItemClickListener;
 import com.develop.loginov.fullstack.model.Event;
 
 import java.util.List;
@@ -18,9 +19,11 @@ import java.util.List;
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
 
     private final List<Event> events;
+    private final OnItemClickListener onEventClickListener;
 
-    public EventAdapter(List<Event> items) {
-        events = items;
+    public EventAdapter(List<Event> events, OnItemClickListener onEventClickListener) {
+        this.events = events;
+        this.onEventClickListener = onEventClickListener;
     }
 
     @NonNull
@@ -68,6 +71,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
             placeView.setText(event.getPlace());
             dateView.setText(event.getDate());
             imageView.setImageResource(event.getPictureId());
+            if(onEventClickListener != null){
+                itemView.setOnClickListener(v -> onEventClickListener.onClick(event));
+            }
         }
     }
 }

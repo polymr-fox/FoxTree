@@ -19,8 +19,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     private final List<Course> courses;
     private final OnItemClickListener onCourseClickListener;
 
-    public CourseAdapter(final List<Course> items,
-                         OnItemClickListener onCourseClickListener) {
+    public CourseAdapter(final List<Course> items, OnItemClickListener onCourseClickListener) {
         courses = items;
         this.onCourseClickListener = onCourseClickListener;
     }
@@ -28,7 +27,9 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_course, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_course,
+                                                                     parent,
+                                                                     false);
         return new ViewHolder(view);
     }
 
@@ -64,10 +65,14 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
             assert course != null;
             nameCourseView.setText(course.getName());
             authorView.setText(course.getAuthorName());
-            amountMembersView.setText(context.getString(R.string.members, course.getCurrentMembersCount(), course.getMaxMemberCount()));
+            amountMembersView.setText(context.getString(R.string.members,
+                                                        course.getCurrentMembersCount(),
+                                                        course.getMaxMemberCount()));
             imageView.setImageResource(course.getPictureId());
             lockView.setImageResource(course.isClose() ? R.drawable.ic_locked : R.drawable.ic_unlocked);
-            itemView.setOnClickListener(v -> onCourseClickListener.onClick(course));
+            if (onCourseClickListener != null) {
+                itemView.setOnClickListener(v -> onCourseClickListener.onClick(course));
+            }
         }
     }
 }

@@ -32,26 +32,36 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         collapseLayout = findViewById(R.id.activity_main__collapse_layout);
         collapseLayout.setVisibility(View.GONE);
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
-        changeFragment(new CourseFragment(), getSupportFragmentManager(), R.id.activity_main__container);
+        changeFragment(new CourseFragment(),
+                       getSupportFragmentManager(),
+                       R.id.activity_main__container);
         navView.setSelectedItemId(R.id.navigation_courses);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener = item -> {
         switch (item.getItemId()) {
             case R.id.navigation_home:
-                changeFragment(HomeFragment.newInstance(), getSupportFragmentManager(), R.id.activity_main__container);
+                changeFragment(HomeFragment.newInstance(),
+                               getSupportFragmentManager(),
+                               R.id.activity_main__container);
                 collapseLayout.setVisibility(View.VISIBLE);
                 return true;
             case R.id.navigation_events:
-                changeFragment(new EventFragment(), getSupportFragmentManager(), R.id.activity_main__container);
+                changeFragment(new EventFragment(),
+                               getSupportFragmentManager(),
+                               R.id.activity_main__container);
                 collapseLayout.setVisibility(View.GONE);
                 return true;
             case R.id.navigation_courses:
-                changeFragment(new CourseFragment(), getSupportFragmentManager(), R.id.activity_main__container);
+                changeFragment(new CourseFragment(),
+                               getSupportFragmentManager(),
+                               R.id.activity_main__container);
                 collapseLayout.setVisibility(View.GONE);
                 return true;
             case R.id.navigation_articles:
-                changeFragment(new ArticleFragment(), getSupportFragmentManager(), R.id.activity_main__container);
+                changeFragment(new ArticleFragment(),
+                               getSupportFragmentManager(),
+                               R.id.activity_main__container);
                 collapseLayout.setVisibility(View.GONE);
                 return true;
         }
@@ -62,17 +72,20 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     @Override
     public void onClick(final Object elem) {
+        final Intent intent = new Intent();
         if (elem instanceof Event) {
             final Event event = (Event) elem;
-
+            intent.setClass(MainActivity.this, EventActivity.class);
         } else if (elem instanceof Course) {
             final Course course = (Course) elem;
-
-            final Intent intent = new Intent(MainActivity.this, CourseActivity.class);
-            //TODO put records from course // put id course
-            startActivity(intent);
+            intent.setClass(MainActivity.this, CourseActivity.class);
         } else if (elem instanceof Article) {
             final Article article = (Article) elem;
+            intent.setClass(MainActivity.this, ArticleActivity.class);
+        } else {
+            return;
         }
+
+        startActivity(intent);
     }
 }

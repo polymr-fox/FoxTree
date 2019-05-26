@@ -96,7 +96,9 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
                 rateImageView.setImageResource(R.drawable.ic_green_top);
             }
 
-            itemView.setOnClickListener(v -> onArticleClickListener.onClick(article));
+            if (onArticleClickListener != null) {
+                itemView.setOnClickListener(v -> onArticleClickListener.onClick(article));
+            }
         }
 
         private String refactor(final int value, final int maxLength) {
