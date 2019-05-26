@@ -1,45 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="@dimen/default_vertical_margin">
 
-    <android.support.constraint.ConstraintLayout
+    <TextView
+        android:id="@+id/course_description_dialog__about_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/default_vertical_margin"
+        android:layout_marginBottom="@dimen/default_half_vertical_margin"
+
+        android:text="@string/about_course"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="@dimen/default_text_title_size"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/course_description_dialog__content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/default_vertical_margin">
 
-        <TextView
-            android:id="@+id/course_description_dialog__about_course"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_half_vertical_margin"
+        android:layout_marginTop="@dimen/default_vertical_margin"
+        android:layout_marginEnd="@dimen/default_half_vertical_margin"
+        android:layout_marginBottom="@dimen/default_vertical_margin"
+        android:text="@string/big_text"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="@dimen/default_text_size"
 
-            android:layout_marginTop="@dimen/default_vertical_margin"
-            android:layout_marginBottom="@dimen/default_half_vertical_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_description_dialog__about_course" />
 
-            android:text="@string/about_course"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="@dimen/default_text_app_title_size"
+    <View
+        android:id="@+id/course_description_dialog__line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/default_half_vertical_margin"
+        android:layout_marginTop="@dimen/default_half_vertical_margin"
+        android:layout_marginEnd="@dimen/default_half_vertical_margin"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@id/course_description_dialog__content" />
 
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+    <TextView
+        android:id="@+id/course_description_dialog__text_place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_vertical_margin"
 
-        <TextView
-            android:id="@+id/course_description_dialog__content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_half_vertical_margin"
+        android:text="@string/place"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="@dimen/default_text_title_size"
+        app:layout_constraintTop_toBottomOf="@id/course_description_dialog__line" />
 
-            android:text="@string/big_text"
-            android:textSize="@dimen/default_text_size"
-            android:textAppearance="?attr/textAppearanceListItem"
+    <TextView
+        android:id="@+id/course_description_dialog__place_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-            app:layout_constraintTop_toBottomOf="@id/course_description_dialog__about_course"
-            app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/default_half_vertical_margin"
+        android:layout_marginTop="@dimen/default_vertical_margin"
+        android:layout_marginEnd="@dimen/default_half_vertical_margin"
+        android:layout_marginBottom="@dimen/default_half_vertical_margin"
 
+        android:text="@string/sample_place"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="@dimen/default_text_size"
 
-            />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_description_dialog__text_place" />
 
-    </android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/course_description_dialog__text_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-</android.support.design.card.MaterialCardView>
+        android:layout_marginTop="@dimen/default_vertical_margin"
+        android:layout_marginBottom="@dimen/default_half_vertical_margin"
+
+        android:text="@string/contacts"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="@dimen/default_text_title_size"
+
+        app:layout_constraintTop_toBottomOf="@id/course_description_dialog__place_content" />
+
+    <ListView
+        android:id="@+id/course_description_dialog__contact_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="@dimen/default_half_vertical_margin"
+        android:layout_marginTop="@dimen/default_vertical_margin"
+        android:layout_marginEnd="@dimen/default_half_vertical_margin"
+        android:layout_marginBottom="@dimen/default_half_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@id/course_description_dialog__text_contact" />
+</android.support.constraint.ConstraintLayout>

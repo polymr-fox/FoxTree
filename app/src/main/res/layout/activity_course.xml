@@ -38,7 +38,14 @@
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/sample_image"
-                    app:layout_constraintBottom_toTopOf="@id/activity_course__author"
+                    app:layout_constraintBottom_toTopOf="@id/activity_course__image_member"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:alpha="0.1"
+                    android:background="@color/colorPrimary"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -124,8 +131,7 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/default_half_vertical_margin"
-            >
+            android:padding="@dimen/default_half_vertical_margin">
 
             <EditText
                 android:id="@+id/activity_course__add_record_text"
@@ -136,37 +142,34 @@
                 android:inputType="text"
                 android:padding="@dimen/default_vertical_margin"
 
+                android:focusable="false"
                 android:textSize="@dimen/default_text_size"
+                app:layout_constraintBottom_toTopOf="@id/activity_course__recycler"
                 app:layout_constraintEnd_toStartOf="@id/activity_course__add_record_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/activity_course__recycler"
 
                 />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/activity_course__add_record_button"
-                android:layout_width="@dimen/mid_icon_size"
-                android:layout_height="@dimen/mid_icon_size"
+                android:layout_width="@dimen/but_add_size"
+                android:layout_height="@dimen/but_add_size"
 
                 android:layout_marginStart="@dimen/default_half_vertical_margin"
                 android:layout_marginEnd="@dimen/default_half_vertical_margin"
                 android:src="@drawable/ic_add_mini"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/activity_course__add_record_text"
-                app:layout_constraintTop_toTopOf="parent"
-                />
-
-
+                app:layout_constraintTop_toTopOf="parent" />
 
             <android.support.v7.widget.RecyclerView
-                app:layout_constraintTop_toBottomOf="@id/activity_course__add_record_button"
                 android:id="@+id/activity_course__recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:nestedScrollingEnabled="false"
-                />
+                app:layout_constraintTop_toBottomOf="@id/activity_course__add_record_button" />
         </android.support.constraint.ConstraintLayout>
 
 

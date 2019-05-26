@@ -21,11 +21,15 @@
     <string name="title_like">Интересно</string>
     <string name="sample_members_count">10 / 20</string>
     <string name="sample_course_name">Разработка под IOS</string>
+    <string name="sample_place">СПбПУ, ГЗ, 237</string>
     <string name="edit">Редактировать</string>
     <string name="add_record">Добавить запись</string>
     <string name="description">Описание</string>
     <string name="about_course">О Курсе</string>
-    <string name="big_text">wjadkkjdwnakjadwnkjawdnkjawdnjkadwkjwadkjnjkwandkjnkjadnjawdndjawkakndwjkjk</string>
+    <string name="big_text">Гарантирует durability (отсутствие потерь подтверджённых записей/удалений) даже в случае падения процесса за счёт того,
+        что операции модификации подтверджаются только после того, как попадут в write-ahead-log. Устаревшие WAL должны ротироваться, чтобы не занимать лишнее место на диске.</string>
+    <string name="place">Место положение</string>
+    <string name="contacts">Контакты</string>
 
 
 </resources>

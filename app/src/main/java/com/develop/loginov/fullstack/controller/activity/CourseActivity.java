@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.develop.loginov.fullstack.R;
 import com.develop.loginov.fullstack.adapter.RecordAdapter;
+import com.develop.loginov.fullstack.dialog.CourseDescriptionDialog;
 import com.develop.loginov.fullstack.model.Record;
 
 import java.util.Arrays;
@@ -61,7 +62,8 @@ public class CourseActivity extends AppCompatActivity {
                 Toast.makeText(CourseActivity.this, R.string.edit, Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.course_setting_description:
-                Toast.makeText(CourseActivity.this, R.string.description, Toast.LENGTH_SHORT).show();
+                final CourseDescriptionDialog dialog = CourseDescriptionDialog.newInstance();
+                dialog.show(getSupportFragmentManager(), "Course description");
                 return true;
             case android.R.id.home:
                 finish();
