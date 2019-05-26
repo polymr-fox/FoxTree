@@ -52,7 +52,8 @@
                     android:id="@+id/activity_course__author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/default_half_vertical_margin"
+                    android:layout_marginStart="@dimen/default_vertical_margin"
+                    android:layout_marginBottom="@dimen/default_half_vertical_margin"
 
                     android:text="@string/sample_person_name"
                     android:textAppearance="?attr/textAppearanceListItem"
@@ -66,7 +67,8 @@
                     android:id="@+id/activity_course__image_member"
                     android:layout_width="@dimen/small_icon_size"
                     android:layout_height="@dimen/small_icon_size"
-                    android:layout_margin="@dimen/default_half_vertical_margin"
+                    android:layout_marginEnd="@dimen/default_vertical_margin"
+                    android:layout_marginBottom="@dimen/default_half_vertical_margin"
                     android:src="@drawable/ic_people"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/activity_course__members" />
@@ -75,8 +77,9 @@
                     android:id="@+id/activity_course__members"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/default_half_vertical_margin"
-                    android:text="@string/sample_members_count"
+                    android:layout_marginEnd="@dimen/default_horizontal_margin"
+                    android:layout_marginBottom="@dimen/default_half_vertical_margin"
+                    android:text="@string/sample_members_count_course"
                     android:textAppearance="?attr/textAppearanceListItem"
 
                     android:textSize="@dimen/default_text_size"
@@ -88,7 +91,8 @@
                     android:id="@+id/activity_course__lock"
                     android:layout_width="@dimen/small_icon_size"
                     android:layout_height="@dimen/small_icon_size"
-                    android:layout_margin="@dimen/default_vertical_margin"
+                    android:layout_marginEnd="@dimen/default_horizontal_margin"
+                    android:layout_marginBottom="@dimen/default_half_vertical_margin"
 
                     android:src="@drawable/ic_locked"
                     app:layout_constraintBottom_toBottomOf="@id/activity_course__image_member"
