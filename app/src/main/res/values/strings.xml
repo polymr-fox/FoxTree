@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FullStack</string>
+    <string name="app_name">FoxTree</string>
     <string name="title_home">Мой профиль</string>
     <string name="title_events">События</string>
     <string name="title_courses">Курсы</string>
