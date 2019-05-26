@@ -5,4 +5,8 @@
         android:id="@+id/course_setting_edit"
         android:title="@string/edit" />
 
-  </menu>
+    <item
+        android:id="@+id/course_setting_description"
+        android:title="@string/description" />
+
+</menu>

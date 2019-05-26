@@ -24,86 +24,86 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
 
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_collapseMode="parallax">
 
-                <android.support.constraint.ConstraintLayout
+                <ImageView
+                    android:id="@+id/activity_course__image_toolbar"
                     android:layout_width="match_parent"
+                    android:layout_height="@dimen/huge_icon_size"
+                    android:layout_marginBottom="@dimen/default_half_vertical_margin"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sample_image"
+                    app:layout_constraintBottom_toTopOf="@id/activity_course__author"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/activity_course__author"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    app:layout_collapseMode="parallax">
+                    android:layout_margin="@dimen/default_half_vertical_margin"
 
-                    <ImageView
-                        android:id="@+id/activity_course__image_toolbar"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/huge_icon_size"
-                        android:layout_marginBottom="@dimen/default_half_vertical_margin"
-                        android:fitsSystemWindows="true"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/sample_image"
-                        app:layout_constraintBottom_toTopOf="@id/activity_course__author"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    android:text="@string/sample_person_name"
+                    android:textAppearance="?attr/textAppearanceListItem"
 
-                    <TextView
-                        android:id="@+id/activity_course__author"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/default_half_vertical_margin"
+                    android:textSize="@dimen/default_text_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-                        android:text="@string/sample_person_name"
-                        android:textAppearance="?attr/textAppearanceListItem"
+                <ImageView
+                    android:id="@+id/activity_course__image_member"
+                    android:layout_width="@dimen/small_icon_size"
+                    android:layout_height="@dimen/small_icon_size"
+                    android:layout_margin="@dimen/default_half_vertical_margin"
+                    android:src="@drawable/ic_people"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/activity_course__members" />
 
-                        android:textSize="@dimen/default_text_size"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_chainStyle="spread_inside"
-                        app:layout_constraintStart_toStartOf="parent" />
+                <TextView
+                    android:id="@+id/activity_course__members"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_half_vertical_margin"
+                    android:text="@string/sample_members_count"
+                    android:textAppearance="?attr/textAppearanceListItem"
 
-                    <ImageView
-                        android:id="@+id/activity_course__image_member"
-                        android:layout_width="@dimen/small_icon_size"
-                        android:layout_height="@dimen/small_icon_size"
-                        android:layout_margin="@dimen/default_half_vertical_margin"
-                        android:src="@drawable/ic_people"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/activity_course__members" />
+                    android:textSize="@dimen/default_text_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
 
-                    <TextView
-                        android:id="@+id/activity_course__members"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/default_half_vertical_margin"
-                        android:text="@string/sample_members_count"
-                        android:textAppearance="?attr/textAppearanceListItem"
+                    app:layout_constraintEnd_toStartOf="@id/activity_course__lock" />
 
-                        android:textSize="@dimen/default_text_size"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                <ImageView
+                    android:id="@+id/activity_course__lock"
+                    android:layout_width="@dimen/small_icon_size"
+                    android:layout_height="@dimen/small_icon_size"
+                    android:layout_margin="@dimen/default_vertical_margin"
 
-                        app:layout_constraintEnd_toStartOf="@id/activity_course__lock" />
-
-                    <ImageView
-                        android:id="@+id/activity_course__lock"
-                        android:layout_width="@dimen/small_icon_size"
-                        android:layout_height="@dimen/small_icon_size"
-                        android:layout_margin="@dimen/default_vertical_margin"
-
-                        android:src="@drawable/ic_locked"
-                        app:layout_constraintBottom_toBottomOf="@id/activity_course__image_member"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/activity_course__image_member" />
+                    android:src="@drawable/ic_locked"
+                    app:layout_constraintBottom_toBottomOf="@id/activity_course__image_member"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/activity_course__image_member" />
 
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="@dimen/big_icon_size"
-                        android:layout_height="@dimen/big_icon_size"
-                        android:src="@drawable/ava_group"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-                </android.support.constraint.ConstraintLayout>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/big_icon_size"
+                    android:layout_height="@dimen/big_icon_size"
+                    android:src="@drawable/ava_group"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </android.support.constraint.ConstraintLayout>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/activity_course__toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -116,11 +116,60 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/activity_course__recycler"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior" />
+        android:layout_height="match_parent"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_half_vertical_margin"
+            >
+
+            <EditText
+                android:id="@+id/activity_course__add_record_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="@string/add_record"
+                android:inputType="text"
+                android:padding="@dimen/default_vertical_margin"
+
+                android:textSize="@dimen/default_text_size"
+                app:layout_constraintEnd_toStartOf="@id/activity_course__add_record_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/activity_course__recycler"
+
+                />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/activity_course__add_record_button"
+                android:layout_width="@dimen/mid_icon_size"
+                android:layout_height="@dimen/mid_icon_size"
+
+                android:layout_marginStart="@dimen/default_half_vertical_margin"
+                android:layout_marginEnd="@dimen/default_half_vertical_margin"
+                android:src="@drawable/ic_add_mini"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/activity_course__add_record_text"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+
+            <android.support.v7.widget.RecyclerView
+                app:layout_constraintTop_toBottomOf="@id/activity_course__add_record_button"
+                android:id="@+id/activity_course__recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:nestedScrollingEnabled="false"
+                />
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

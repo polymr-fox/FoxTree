@@ -59,12 +59,15 @@ public class CourseActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.course_setting_edit:
                 Toast.makeText(CourseActivity.this, R.string.edit, Toast.LENGTH_SHORT).show();
-                break;
+                return true;
+            case R.id.course_setting_description:
+                Toast.makeText(CourseActivity.this, R.string.description, Toast.LENGTH_SHORT).show();
+                return true;
             case android.R.id.home:
                 finish();
-                break;
+                return true;
         }
-        return true;
+        return false;
     }
 
     @Override

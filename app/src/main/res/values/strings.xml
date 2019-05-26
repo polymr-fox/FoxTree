@@ -22,6 +22,10 @@
     <string name="sample_members_count">10 / 20</string>
     <string name="sample_course_name">Разработка под IOS</string>
     <string name="edit">Редактировать</string>
+    <string name="add_record">Добавить запись</string>
+    <string name="description">Описание</string>
+    <string name="about_course">О Курсе</string>
+    <string name="big_text">wjadkkjdwnakjadwnkjawdnkjawdnjkadwkjwadkjnjkwandkjnkjadnjawdndjawkakndwjkjk</string>
 
 
 </resources>
