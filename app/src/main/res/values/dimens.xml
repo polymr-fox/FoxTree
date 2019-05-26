@@ -14,6 +14,7 @@
     <dimen name="default_text_app_title_size">24sp</dimen>
 
     <dimen name="small_icon_size">20dp</dimen>
+    <dimen name="little_icon_size">32dp</dimen>
     <dimen name="mid_icon_size">64dp</dimen>
     <dimen name="but_add_size">50dp</dimen>
     <dimen name="big_icon_size">100dp</dimen>

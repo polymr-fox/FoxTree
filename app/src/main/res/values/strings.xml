@@ -31,6 +31,5 @@
     <string name="place">Место положение</string>
     <string name="contacts">Контакты</string>
     <string name="sample_members_count_event">10</string>
-
-
+    <string name="sample_date">10/11/2019</string>
 </resources>
