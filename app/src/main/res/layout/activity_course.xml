@@ -23,17 +23,13 @@
             app:expandedTitleMarginStart="48dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="vertical"
-                app:layout_collapseMode="parallax">
 
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:layout_collapseMode="parallax">
 
                     <ImageView
                         android:id="@+id/activity_course__image_toolbar"
@@ -52,7 +48,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/default_half_vertical_margin"
 
-                        android:text="Петр Иванов"
+                        android:text="@string/sample_person_name"
                         android:textAppearance="?attr/textAppearanceListItem"
 
                         android:textSize="@dimen/default_text_size"
@@ -74,7 +70,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/default_half_vertical_margin"
-                        android:text="10 / 20"
+                        android:text="@string/sample_members_count"
                         android:textAppearance="?attr/textAppearanceListItem"
 
                         android:textSize="@dimen/default_text_size"
@@ -102,19 +98,18 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
                 </android.support.constraint.ConstraintLayout>
-            </LinearLayout>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/activity_course__toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Разработка под IOS"
+                    android:text="@string/sample_course_name"
                     android:textColor="@color/white"
+
                     android:textSize="@dimen/default_text_app_title_size" />
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>

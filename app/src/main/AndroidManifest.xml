@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controller.activity.HomeActivity"></activity>
-        <activity android:name=".controller.activity.CourseActivity"></activity>
+        <activity android:name=".controller.activity.CourseActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.develop.loginov.fullstack.controller.activity.MainActivity" />
+        </activity>
         <activity
             android:name=".controller.activity.MainActivity"
             android:label="@string/app_name">

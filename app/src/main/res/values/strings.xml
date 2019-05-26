@@ -19,6 +19,9 @@
     <string name="email_sample">l0gark@ya.ru</string>
     <string name="title_knowing">Знаю</string>
     <string name="title_like">Интересно</string>
+    <string name="sample_members_count">10 / 20</string>
+    <string name="sample_course_name">Разработка под IOS</string>
+    <string name="edit">Редактировать</string>
 
 
 </resources>
