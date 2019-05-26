@@ -1,7 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_margin="@dimen/default_half_vertical_margin"
+    app:cardBackgroundColor="@color/background"
+    app:cardCornerRadius="@dimen/corner_radius">
 
-</LinearLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/item_article__name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_vertical_margin"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="@dimen/default_vertical_margin"
+            android:layout_marginEnd="@dimen/default_vertical_margin"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="@dimen/default_text_title_size"
+
+            app:layout_constraintBottom_toTopOf="@id/item_article__name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            tools:text="@string/name_sample" />
+
+        <View
+            android:id="@+id/item_article__line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            app:layout_constraintBottom_toTopOf="@id/item_article__author"
+            app:layout_constraintTop_toBottomOf="@id/item_article__name" />
+
+        <TextView
+            android:id="@+id/item_article__author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_vertical_margin"
+
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="@dimen/default_text_size"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+
+            tools:text="Петр Иванов" />
+
+        <TextView
+            android:id="@+id/item_article__date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_vertical_margin"
+
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="@dimen/default_text_size"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/item_article__rate_image"
+            app:layout_constraintTop_toBottomOf="@id/item_article__name"
+
+
+            tools:text="12/10/19" />
+
+        <ImageView
+            android:id="@+id/item_article__rate_image"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:layout_margin="@dimen/default_half_vertical_margin"
+            android:src="@drawable/ic_green_top"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/item_article__rate_text"
+            app:layout_constraintTop_toBottomOf="@id/item_article__name"
+
+            />
+
+
+        <TextView
+            android:id="@+id/item_article__rate_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_vertical_margin"
+
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="@dimen/default_text_size"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/item_article__message_image"
+            app:layout_constraintTop_toBottomOf="@id/item_article__name"
+
+
+            tools:text="+12" />
+        <ImageView
+            android:id="@+id/item_article__message_image"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:layout_margin="@dimen/default_half_vertical_margin"
+
+            android:src="@drawable/ic_message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/item_article__message_count"
+            app:layout_constraintTop_toBottomOf="@id/item_article__name"
+
+            />
+        <TextView
+            android:id="@+id/item_article__message_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_vertical_margin"
+
+            tools:text="7"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="@dimen/default_text_size"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_article__name"
+            />
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.design.card.MaterialCardView>

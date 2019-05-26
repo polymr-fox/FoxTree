@@ -14,11 +14,14 @@ import com.develop.loginov.fullstack.controller.fragment.ArticleFragment;
 import com.develop.loginov.fullstack.controller.fragment.CourseFragment;
 import com.develop.loginov.fullstack.controller.fragment.EventFragment;
 import com.develop.loginov.fullstack.controller.fragment.HomeFragment;
+import com.develop.loginov.fullstack.listeners.OnItemClickListener;
+import com.develop.loginov.fullstack.model.Article;
 import com.develop.loginov.fullstack.model.Course;
+import com.develop.loginov.fullstack.model.Event;
 
 import static com.develop.loginov.fullstack.model.helper.FragmentHelper.*;
 
-public class MainActivity extends AppCompatActivity implements CourseFragment.OnCourseClickListener {
+public class MainActivity extends AppCompatActivity implements OnItemClickListener {
     private View collapseLayout;
 
     @Override
@@ -56,10 +59,20 @@ public class MainActivity extends AppCompatActivity implements CourseFragment.On
         return false;
     };
 
+
     @Override
-    public void onCourseClick(final Course course) {
-        final Intent intent = new Intent(MainActivity.this, CourseActivity.class);
-        //TODO put records from course // put id course
-        startActivity(intent);
+    public void onClick(final Object elem) {
+        if (elem instanceof Event) {
+            final Event event = (Event) elem;
+
+        } else if (elem instanceof Course) {
+            final Course course = (Course) elem;
+
+            final Intent intent = new Intent(MainActivity.this, CourseActivity.class);
+            //TODO put records from course // put id course
+            startActivity(intent);
+        } else if (elem instanceof Article) {
+            final Article article = (Article) elem;
+        }
     }
 }

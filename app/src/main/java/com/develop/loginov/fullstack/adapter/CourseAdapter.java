@@ -10,17 +10,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.develop.loginov.fullstack.R;
-import com.develop.loginov.fullstack.controller.fragment.CourseFragment;
+import com.develop.loginov.fullstack.listeners.OnItemClickListener;
 import com.develop.loginov.fullstack.model.Course;
 
 import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
     private final List<Course> courses;
-    private final CourseFragment.OnCourseClickListener onCourseClickListener;
+    private final OnItemClickListener onCourseClickListener;
 
     public CourseAdapter(final List<Course> items,
-                         CourseFragment.OnCourseClickListener onCourseClickListener) {
+                         OnItemClickListener onCourseClickListener) {
         courses = items;
         this.onCourseClickListener = onCourseClickListener;
     }
@@ -67,7 +67,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
             amountMembersView.setText(context.getString(R.string.members, course.getCurrentMembersCount(), course.getMaxMemberCount()));
             imageView.setImageResource(course.getPictureId());
             lockView.setImageResource(course.isClose() ? R.drawable.ic_locked : R.drawable.ic_unlocked);
-            itemView.setOnClickListener(v -> onCourseClickListener.onCourseClick(course));
+            itemView.setOnClickListener(v -> onCourseClickListener.onClick(course));
         }
     }
 }

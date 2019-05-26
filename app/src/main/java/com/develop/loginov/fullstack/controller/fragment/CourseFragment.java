@@ -10,9 +10,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.develop.loginov.fullstack.R;
 import com.develop.loginov.fullstack.adapter.CourseAdapter;
+import com.develop.loginov.fullstack.listeners.OnItemClickListener;
 import com.develop.loginov.fullstack.model.Course;
 
 import java.util.Arrays;
@@ -20,11 +22,10 @@ import java.util.List;
 
 public class CourseFragment extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
-    private int mColumnCount = 1;
 
     private List<Course> list;
     private RecyclerView.Adapter adapter;
-    private OnCourseClickListener onCourseClickListener;
+    private OnItemClickListener onCourseClickListener;
 
     public CourseFragment() {
     }
@@ -42,13 +43,11 @@ public class CourseFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_course_list, container, false);
     }
@@ -67,14 +66,26 @@ public class CourseFragment extends Fragment {
     }
 
     private List<Course> getCourses() {
-        return Arrays.asList(Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12), Course.of(getString(R.string.name_sample), "Пётр Иванов", R.drawable.sample_image, 30, 12), Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12), Course.of(getString(R.string.name_sample), "Пётр Иванов", R.drawable.sample_image, 30, 12), Course.of("Android", "Пётр Иванов", R.drawable.sample_image, 25, 18));
+        return Arrays.asList(Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12),
+                             Course.of(getString(R.string.name_sample),
+                                       "Пётр Иванов",
+                                       R.drawable.sample_image,
+                                       30,
+                                       12),
+                             Course.of("Spring", "Пётр Иванов", R.drawable.sample_image, 30, 12),
+                             Course.of(getString(R.string.name_sample),
+                                       "Пётр Иванов",
+                                       R.drawable.sample_image,
+                                       30,
+                                       12),
+                             Course.of("Android", "Пётр Иванов", R.drawable.sample_image, 25, 18));
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnCourseClickListener) {
-            onCourseClickListener = (OnCourseClickListener) context;
+        if (context instanceof OnItemClickListener) {
+            onCourseClickListener = (OnItemClickListener) context;
         } else {
             throw new RuntimeException(context.toString() + " must implement OnListFragmentInteractionListener");
         }
@@ -84,9 +95,5 @@ public class CourseFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         onCourseClickListener = null;
-    }
-
-    public interface OnCourseClickListener {
-        void onCourseClick(Course course);
     }
 }

@@ -6,8 +6,8 @@
     android:name="com.develop.loginov.fullstack.controller.fragment.ArticleFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_marginStart="@dimen/default_half_vertical_margin"
+    android:layout_marginEnd="@dimen/default_half_vertical_margin"
     app:layoutManager="LinearLayoutManager"
     tools:context=".controller.fragment.ArticleFragment"
     tools:listitem="@layout/item_article" />
