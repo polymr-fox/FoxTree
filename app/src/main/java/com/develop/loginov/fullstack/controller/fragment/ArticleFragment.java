@@ -15,14 +15,14 @@ import com.develop.loginov.fullstack.R;
 import com.develop.loginov.fullstack.adapter.ArticleAdapter;
 import com.develop.loginov.fullstack.listeners.OnItemClickListener;
 import com.develop.loginov.fullstack.model.Article;
-import com.develop.loginov.fullstack.model.helper.HardCodeHelper;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
-import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.*;
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getAuthorName;
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getDate;
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getName;
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getRate;
 
 public class ArticleFragment extends Fragment {
 
@@ -85,7 +85,7 @@ public class ArticleFragment extends Fragment {
     private List<Article> getArticles() {
         final List<Article> articles = new ArrayList<>(15);
         for (int i = 0; i < 15; i++) {
-            articles.add(Article.of(getName(), "vdvd", getAuthorName(), getRate(), getDate()));
+            articles.add(Article.of(getName(), "fww", getAuthorName(), getRate(), getDate()));
         }
         return articles;
 //

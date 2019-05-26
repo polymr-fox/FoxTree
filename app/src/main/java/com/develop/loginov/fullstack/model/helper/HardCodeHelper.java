@@ -7,27 +7,34 @@ import java.util.Random;
 public final class HardCodeHelper {
     private static final int[] drawables = new int[]{R.drawable.event1,
                                                      R.drawable.event2,
+//                                                     R.drawable.event4,
+                                                     R.drawable.event5,
+                                                     R.drawable.event6,
                                                      R.drawable.event3};
-    private static final int[] texts = new int[]{
+    private static final int[] texts = new int[]{R.string.big_text1,
+                                                 R.string.big_text2,
+                                                 R.string.big_text3,
+                                                 R.string.big_text4,
+                                                 R.string.big_text5};
 
-    };
     private static final String[] names = new String[]{"PolyHack", "PolyContest", "PolyVolonter"};
 
     private static final String[] authors = new String[]{"Роман Хоружий",
-                                                         "Арсений Дружинин",
-                                                         "Арина Касимова"};
+                                                         "Сеня Дружинин",
+                                                         "Арина Касимова",
+                                                         "Петр Курняков"};
 
-    private static final String[] dates = new String[]{"03/10/2019",
-                                                       "10/08/2020",
-                                                       "12/10/2019",
-                                                       "13/11/2019",
-                                                       "10/10/2019",
-                                                       "28/06/2021",
-                                                       "12/07/2019",
-                                                       "12/01/2020",
-                                                       "12/10/2019",
-                                                       "17/02/2020",
-                                                       "01/09/2021"};
+    private static final String[] dates = new String[]{"03/10/19",
+                                                       "10/08/20",
+                                                       "12/10/19",
+                                                       "13/11/19",
+                                                       "10/10/19",
+                                                       "28/06/21",
+                                                       "12/07/19",
+                                                       "12/01/20",
+                                                       "12/10/19",
+                                                       "17/02/20",
+                                                       "01/09/21"};
 
     private static final String[] places = new String[]{"СПбПУ, ГЗ, 237",
                                                         "СПбПУ, НИК, 2.17.1",
@@ -61,7 +68,7 @@ public final class HardCodeHelper {
         return names[index];
     }
 
-    public static int getText() {
+    public static int getTextId() {
         int index = random.nextInt(texts.length);
         return texts[index];
     }

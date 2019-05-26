@@ -8,4 +8,4 @@
     android:textAppearance="?attr/textAppearanceListItem"
     android:textSize="@dimen/default_text_size"
 
-    tools:text="@string/big_text"/>
+    tools:text="@string/big_text1"/>

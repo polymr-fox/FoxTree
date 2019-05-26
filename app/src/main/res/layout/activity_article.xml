@@ -124,10 +124,11 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/activity_article__text_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/default_vertical_margin"
-                    android:text="@string/big_text"
+                    android:text="@string/big_text1"
                     android:textAppearance="?attr/textAppearanceListItem"
                     android:textSize="@dimen/default_text_size" />
 

@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,8 +17,11 @@ import com.develop.loginov.fullstack.adapter.RecordAdapter;
 import com.develop.loginov.fullstack.dialog.CourseDescriptionDialog;
 import com.develop.loginov.fullstack.model.Record;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
+
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getAuthorName;
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getTextId;
 
 public class CourseActivity extends AppCompatActivity {
 
@@ -81,6 +83,12 @@ public class CourseActivity extends AppCompatActivity {
     }
 
     private List<Record> getRecords() {
+        final List<Record> records = new ArrayList<>(15);
+        for (int i = 0; i < 15; i++) {
+            records.add(Record.of(getAuthorName(), getString(getTextId())));
+        }
+        return records;
+        /*
         return Arrays.asList(Record.of("IOS Разработка",
                                        "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"),
                              Record.of("IOS Разработка",
@@ -93,5 +101,6 @@ public class CourseActivity extends AppCompatActivity {
                                        "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"),
                              Record.of("IOS Разработка",
                                        "cl;msalmcl;samc;lamlcewfjfjefiwefjiwefjwe"));
+   */
     }
 }

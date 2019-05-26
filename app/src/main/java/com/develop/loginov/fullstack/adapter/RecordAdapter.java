@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.develop.loginov.fullstack.R;
 import com.develop.loginov.fullstack.model.Record;
+import com.develop.loginov.fullstack.model.helper.HardCodeHelper;
 
 import java.util.List;
 
@@ -53,7 +54,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder
 
         void bind(final Record record) {
             assert record != null;
-            imageView.setImageResource(record.getPictureId());
+            imageView.setImageResource(HardCodeHelper.getDrawable());
             nameView.setText(record.getName());
             contentView.setText(record.getContent());
         }

@@ -29,7 +29,7 @@
         android:layout_marginTop="@dimen/default_vertical_margin"
         android:layout_marginEnd="@dimen/default_half_vertical_margin"
         android:layout_marginBottom="@dimen/default_vertical_margin"
-        android:text="@string/big_text"
+        android:text="@string/big_text1"
         android:textAppearance="?attr/textAppearanceListItem"
         android:textSize="@dimen/default_text_size"
 

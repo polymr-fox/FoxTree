@@ -1,12 +1,12 @@
 package com.develop.loginov.fullstack.controller.activity;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import com.develop.loginov.fullstack.R;
+
+import static com.develop.loginov.fullstack.model.helper.HardCodeHelper.getTextId;
 
 public class ArticleActivity extends AppCompatActivity {
 
@@ -14,20 +14,8 @@ public class ArticleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article);
-//        setCustomActionBar();
+        final TextView textView = findViewById(R.id.activity_article__text_content);
+        textView.setText(getString(getTextId()));
     }
-    private void setCustomActionBar() {
-        final Toolbar toolbar = findViewById(R.id.activity_article__toolbar);
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-        if (toolbar.getOverflowIcon() != null) {
-            toolbar.getOverflowIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
-        }
 
-        if (toolbar.getNavigationIcon() != null) {
-            toolbar.getNavigationIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
-        }
-    }
 }

@@ -12,14 +12,14 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/default_vertical_margin">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/item_record__image"
             android:layout_width="@dimen/mid_icon_size"
             android:layout_height="@dimen/mid_icon_size"
 
             android:layout_margin="@dimen/default_half_vertical_margin"
 
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/ava_group"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,8 +27,7 @@
             android:id="@+id/item_record__name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/default_half_vertical_margin"
-
+            android:layout_marginStart="@dimen/default_vertical_margin"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:textAppearance="?attr/textAppearanceListItem"
@@ -45,6 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_half_vertical_margin"
+            android:padding="@dimen/default_half_vertical_margin"
+
 
             android:textAppearance="?attr/textAppearanceListItem"
             android:textSize="@dimen/default_text_size"
